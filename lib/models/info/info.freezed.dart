@@ -21,9 +21,9 @@ Info _$InfoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Info {
   String get id => throw _privateConstructorUsedError;
-  String get synopsis => throw _privateConstructorUsedError;
-  String get yearsAired => throw _privateConstructorUsedError;
-  List<Creator> get sayings => throw _privateConstructorUsedError;
+  String? get synopsis => throw _privateConstructorUsedError;
+  String? get yearsAired => throw _privateConstructorUsedError;
+  List<Creator>? get sayings => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,10 @@ abstract class $InfoCopyWith<$Res> {
       _$InfoCopyWithImpl<$Res, Info>;
   @useResult
   $Res call(
-      {String id, String synopsis, String yearsAired, List<Creator> sayings});
+      {String id,
+      String? synopsis,
+      String? yearsAired,
+      List<Creator>? sayings});
 }
 
 /// @nodoc
@@ -53,27 +56,27 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
   @override
   $Res call({
     Object? id = null,
-    Object? synopsis = null,
-    Object? yearsAired = null,
-    Object? sayings = null,
+    Object? synopsis = freezed,
+    Object? yearsAired = freezed,
+    Object? sayings = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      synopsis: null == synopsis
+      synopsis: freezed == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
-              as String,
-      yearsAired: null == yearsAired
+              as String?,
+      yearsAired: freezed == yearsAired
           ? _value.yearsAired
           : yearsAired // ignore: cast_nullable_to_non_nullable
-              as String,
-      sayings: null == sayings
+              as String?,
+      sayings: freezed == sayings
           ? _value.sayings
           : sayings // ignore: cast_nullable_to_non_nullable
-              as List<Creator>,
+              as List<Creator>?,
     ) as $Val);
   }
 }
@@ -85,7 +88,10 @@ abstract class _$$_InfoCopyWith<$Res> implements $InfoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id, String synopsis, String yearsAired, List<Creator> sayings});
+      {String id,
+      String? synopsis,
+      String? yearsAired,
+      List<Creator>? sayings});
 }
 
 /// @nodoc
@@ -98,27 +104,27 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
   @override
   $Res call({
     Object? id = null,
-    Object? synopsis = null,
-    Object? yearsAired = null,
-    Object? sayings = null,
+    Object? synopsis = freezed,
+    Object? yearsAired = freezed,
+    Object? sayings = freezed,
   }) {
     return _then(_$_Info(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      synopsis: null == synopsis
+      synopsis: freezed == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
-              as String,
-      yearsAired: null == yearsAired
+              as String?,
+      yearsAired: freezed == yearsAired
           ? _value.yearsAired
           : yearsAired // ignore: cast_nullable_to_non_nullable
-              as String,
-      sayings: null == sayings
+              as String?,
+      sayings: freezed == sayings
           ? _value._sayings
           : sayings // ignore: cast_nullable_to_non_nullable
-              as List<Creator>,
+              as List<Creator>?,
     ));
   }
 }
@@ -128,9 +134,9 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
 class _$_Info implements _Info {
   const _$_Info(
       {required this.id,
-      required this.synopsis,
-      required this.yearsAired,
-      required final List<Creator> sayings})
+      this.synopsis,
+      this.yearsAired,
+      final List<Creator>? sayings})
       : _sayings = sayings;
 
   factory _$_Info.fromJson(Map<String, dynamic> json) => _$$_InfoFromJson(json);
@@ -138,15 +144,17 @@ class _$_Info implements _Info {
   @override
   final String id;
   @override
-  final String synopsis;
+  final String? synopsis;
   @override
-  final String yearsAired;
-  final List<Creator> _sayings;
+  final String? yearsAired;
+  final List<Creator>? _sayings;
   @override
-  List<Creator> get sayings {
+  List<Creator>? get sayings {
+    final value = _sayings;
+    if (value == null) return null;
     if (_sayings is EqualUnmodifiableListView) return _sayings;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_sayings);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -189,20 +197,20 @@ class _$_Info implements _Info {
 abstract class _Info implements Info {
   const factory _Info(
       {required final String id,
-      required final String synopsis,
-      required final String yearsAired,
-      required final List<Creator> sayings}) = _$_Info;
+      final String? synopsis,
+      final String? yearsAired,
+      final List<Creator>? sayings}) = _$_Info;
 
   factory _Info.fromJson(Map<String, dynamic> json) = _$_Info.fromJson;
 
   @override
   String get id;
   @override
-  String get synopsis;
+  String? get synopsis;
   @override
-  String get yearsAired;
+  String? get yearsAired;
   @override
-  List<Creator> get sayings;
+  List<Creator>? get sayings;
   @override
   @JsonKey(ignore: true)
   _$$_InfoCopyWith<_$_Info> get copyWith => throw _privateConstructorUsedError;
@@ -214,8 +222,8 @@ Creator _$CreatorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Creator {
-  String get name => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -227,7 +235,7 @@ abstract class $CreatorCopyWith<$Res> {
   factory $CreatorCopyWith(Creator value, $Res Function(Creator) then) =
       _$CreatorCopyWithImpl<$Res, Creator>;
   @useResult
-  $Res call({String name, String url});
+  $Res call({String? name, String? url});
 }
 
 /// @nodoc
@@ -243,18 +251,18 @@ class _$CreatorCopyWithImpl<$Res, $Val extends Creator>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? url = null,
+    Object? name = freezed,
+    Object? url = freezed,
   }) {
     return _then(_value.copyWith(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
+              as String?,
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -266,7 +274,7 @@ abstract class _$$_CreatorCopyWith<$Res> implements $CreatorCopyWith<$Res> {
       __$$_CreatorCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String url});
+  $Res call({String? name, String? url});
 }
 
 /// @nodoc
@@ -279,18 +287,18 @@ class __$$_CreatorCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = null,
-    Object? url = null,
+    Object? name = freezed,
+    Object? url = freezed,
   }) {
     return _then(_$_Creator(
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
+              as String?,
+      url: freezed == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -298,15 +306,15 @@ class __$$_CreatorCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Creator implements _Creator {
-  const _$_Creator({required this.name, required this.url});
+  const _$_Creator({this.name, this.url});
 
   factory _$_Creator.fromJson(Map<String, dynamic> json) =>
       _$$_CreatorFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
-  final String url;
+  final String? url;
 
   @override
   String toString() {
@@ -341,15 +349,14 @@ class _$_Creator implements _Creator {
 }
 
 abstract class _Creator implements Creator {
-  const factory _Creator(
-      {required final String name, required final String url}) = _$_Creator;
+  const factory _Creator({final String? name, final String? url}) = _$_Creator;
 
   factory _Creator.fromJson(Map<String, dynamic> json) = _$_Creator.fromJson;
 
   @override
-  String get name;
+  String? get name;
   @override
-  String get url;
+  String? get url;
   @override
   @JsonKey(ignore: true)
   _$$_CreatorCopyWith<_$_Creator> get copyWith =>

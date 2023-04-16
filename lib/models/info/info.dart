@@ -9,9 +9,9 @@ part 'info.g.dart';
 class Info with _$Info {
   const factory Info({
     required String id,
-    required String synopsis,
-    required String yearsAired,
-    required List<Creator> sayings,
+    String? synopsis,
+    String? yearsAired,
+    List<Creator>? sayings,
   }) = _Info;
 
   factory Info.fromJson(Map<String, dynamic> json) => _$InfoFromJson(json);
@@ -19,7 +19,7 @@ class Info with _$Info {
 
 @freezed
 class Creator with _$Creator {
-  const factory Creator({required String name, required String url}) = _Creator;
+  const factory Creator({String? name, String? url}) = _Creator;
 
   factory Creator.fromJson(Map<String, dynamic> json) =>
       _$CreatorFromJson(json);
