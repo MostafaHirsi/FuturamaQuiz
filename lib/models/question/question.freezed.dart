@@ -21,9 +21,9 @@ Question _$QuestionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Question {
   String get id => throw _privateConstructorUsedError;
-  String get question => throw _privateConstructorUsedError;
-  String get possibleAnswers => throw _privateConstructorUsedError;
-  String get correctAnswer => throw _privateConstructorUsedError;
+  String? get question => throw _privateConstructorUsedError;
+  String? get possibleAnswers => throw _privateConstructorUsedError;
+  String? get correctAnswer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,9 +38,9 @@ abstract class $QuestionCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String question,
-      String possibleAnswers,
-      String correctAnswer});
+      String? question,
+      String? possibleAnswers,
+      String? correctAnswer});
 }
 
 /// @nodoc
@@ -57,27 +57,27 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
   @override
   $Res call({
     Object? id = null,
-    Object? question = null,
-    Object? possibleAnswers = null,
-    Object? correctAnswer = null,
+    Object? question = freezed,
+    Object? possibleAnswers = freezed,
+    Object? correctAnswer = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      question: null == question
+      question: freezed == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
-              as String,
-      possibleAnswers: null == possibleAnswers
+              as String?,
+      possibleAnswers: freezed == possibleAnswers
           ? _value.possibleAnswers
           : possibleAnswers // ignore: cast_nullable_to_non_nullable
-              as String,
-      correctAnswer: null == correctAnswer
+              as String?,
+      correctAnswer: freezed == correctAnswer
           ? _value.correctAnswer
           : correctAnswer // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -91,9 +91,9 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String question,
-      String possibleAnswers,
-      String correctAnswer});
+      String? question,
+      String? possibleAnswers,
+      String? correctAnswer});
 }
 
 /// @nodoc
@@ -108,27 +108,27 @@ class __$$_QuestionCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? question = null,
-    Object? possibleAnswers = null,
-    Object? correctAnswer = null,
+    Object? question = freezed,
+    Object? possibleAnswers = freezed,
+    Object? correctAnswer = freezed,
   }) {
     return _then(_$_Question(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      question: null == question
+      question: freezed == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
-              as String,
-      possibleAnswers: null == possibleAnswers
+              as String?,
+      possibleAnswers: freezed == possibleAnswers
           ? _value.possibleAnswers
           : possibleAnswers // ignore: cast_nullable_to_non_nullable
-              as String,
-      correctAnswer: null == correctAnswer
+              as String?,
+      correctAnswer: freezed == correctAnswer
           ? _value.correctAnswer
           : correctAnswer // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -138,9 +138,9 @@ class __$$_QuestionCopyWithImpl<$Res>
 class _$_Question implements _Question {
   const _$_Question(
       {required this.id,
-      required this.question,
-      required this.possibleAnswers,
-      required this.correctAnswer});
+      this.question,
+      this.possibleAnswers,
+      this.correctAnswer});
 
   factory _$_Question.fromJson(Map<String, dynamic> json) =>
       _$$_QuestionFromJson(json);
@@ -148,11 +148,11 @@ class _$_Question implements _Question {
   @override
   final String id;
   @override
-  final String question;
+  final String? question;
   @override
-  final String possibleAnswers;
+  final String? possibleAnswers;
   @override
-  final String correctAnswer;
+  final String? correctAnswer;
 
   @override
   String toString() {
@@ -195,20 +195,20 @@ class _$_Question implements _Question {
 abstract class _Question implements Question {
   const factory _Question(
       {required final String id,
-      required final String question,
-      required final String possibleAnswers,
-      required final String correctAnswer}) = _$_Question;
+      final String? question,
+      final String? possibleAnswers,
+      final String? correctAnswer}) = _$_Question;
 
   factory _Question.fromJson(Map<String, dynamic> json) = _$_Question.fromJson;
 
   @override
   String get id;
   @override
-  String get question;
+  String? get question;
   @override
-  String get possibleAnswers;
+  String? get possibleAnswers;
   @override
-  String get correctAnswer;
+  String? get correctAnswer;
   @override
   @JsonKey(ignore: true)
   _$$_QuestionCopyWith<_$_Question> get copyWith =>

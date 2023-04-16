@@ -20,15 +20,15 @@ Character _$CharacterFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Character {
-  String get id => throw _privateConstructorUsedError;
-  String get age => throw _privateConstructorUsedError;
-  String get gender => throw _privateConstructorUsedError;
-  String get species => throw _privateConstructorUsedError;
-  String get homePlanet => throw _privateConstructorUsedError;
-  String get occupation => throw _privateConstructorUsedError;
-  List<String> get sayings => throw _privateConstructorUsedError;
-  Name get name => throw _privateConstructorUsedError;
-  Images get images => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String? get age => throw _privateConstructorUsedError;
+  String? get gender => throw _privateConstructorUsedError;
+  String? get species => throw _privateConstructorUsedError;
+  String? get homePlanet => throw _privateConstructorUsedError;
+  String? get occupation => throw _privateConstructorUsedError;
+  List<String>? get sayings => throw _privateConstructorUsedError;
+  Name? get name => throw _privateConstructorUsedError;
+  Images? get images => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,18 +42,18 @@ abstract class $CharacterCopyWith<$Res> {
       _$CharacterCopyWithImpl<$Res, Character>;
   @useResult
   $Res call(
-      {String id,
-      String age,
-      String gender,
-      String species,
-      String homePlanet,
-      String occupation,
-      List<String> sayings,
-      Name name,
-      Images images});
+      {int id,
+      String? age,
+      String? gender,
+      String? species,
+      String? homePlanet,
+      String? occupation,
+      List<String>? sayings,
+      Name? name,
+      Images? images});
 
-  $NameCopyWith<$Res> get name;
-  $ImagesCopyWith<$Res> get images;
+  $NameCopyWith<$Res>? get name;
+  $ImagesCopyWith<$Res>? get images;
 }
 
 /// @nodoc
@@ -70,67 +70,75 @@ class _$CharacterCopyWithImpl<$Res, $Val extends Character>
   @override
   $Res call({
     Object? id = null,
-    Object? age = null,
-    Object? gender = null,
-    Object? species = null,
-    Object? homePlanet = null,
-    Object? occupation = null,
-    Object? sayings = null,
-    Object? name = null,
-    Object? images = null,
+    Object? age = freezed,
+    Object? gender = freezed,
+    Object? species = freezed,
+    Object? homePlanet = freezed,
+    Object? occupation = freezed,
+    Object? sayings = freezed,
+    Object? name = freezed,
+    Object? images = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
+              as int,
+      age: freezed == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
+              as String?,
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as String,
-      species: null == species
+              as String?,
+      species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
-              as String,
-      homePlanet: null == homePlanet
+              as String?,
+      homePlanet: freezed == homePlanet
           ? _value.homePlanet
           : homePlanet // ignore: cast_nullable_to_non_nullable
-              as String,
-      occupation: null == occupation
+              as String?,
+      occupation: freezed == occupation
           ? _value.occupation
           : occupation // ignore: cast_nullable_to_non_nullable
-              as String,
-      sayings: null == sayings
+              as String?,
+      sayings: freezed == sayings
           ? _value.sayings
           : sayings // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      name: null == name
+              as List<String>?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
-      images: null == images
+              as Name?,
+      images: freezed == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as Images,
+              as Images?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $NameCopyWith<$Res> get name {
-    return $NameCopyWith<$Res>(_value.name, (value) {
+  $NameCopyWith<$Res>? get name {
+    if (_value.name == null) {
+      return null;
+    }
+
+    return $NameCopyWith<$Res>(_value.name!, (value) {
       return _then(_value.copyWith(name: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ImagesCopyWith<$Res> get images {
-    return $ImagesCopyWith<$Res>(_value.images, (value) {
+  $ImagesCopyWith<$Res>? get images {
+    if (_value.images == null) {
+      return null;
+    }
+
+    return $ImagesCopyWith<$Res>(_value.images!, (value) {
       return _then(_value.copyWith(images: value) as $Val);
     });
   }
@@ -144,20 +152,20 @@ abstract class _$$_CharacterCopyWith<$Res> implements $CharacterCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String age,
-      String gender,
-      String species,
-      String homePlanet,
-      String occupation,
-      List<String> sayings,
-      Name name,
-      Images images});
+      {int id,
+      String? age,
+      String? gender,
+      String? species,
+      String? homePlanet,
+      String? occupation,
+      List<String>? sayings,
+      Name? name,
+      Images? images});
 
   @override
-  $NameCopyWith<$Res> get name;
+  $NameCopyWith<$Res>? get name;
   @override
-  $ImagesCopyWith<$Res> get images;
+  $ImagesCopyWith<$Res>? get images;
 }
 
 /// @nodoc
@@ -172,52 +180,52 @@ class __$$_CharacterCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? age = null,
-    Object? gender = null,
-    Object? species = null,
-    Object? homePlanet = null,
-    Object? occupation = null,
-    Object? sayings = null,
-    Object? name = null,
-    Object? images = null,
+    Object? age = freezed,
+    Object? gender = freezed,
+    Object? species = freezed,
+    Object? homePlanet = freezed,
+    Object? occupation = freezed,
+    Object? sayings = freezed,
+    Object? name = freezed,
+    Object? images = freezed,
   }) {
     return _then(_$_Character(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      age: null == age
+              as int,
+      age: freezed == age
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
+              as String?,
+      gender: freezed == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as String,
-      species: null == species
+              as String?,
+      species: freezed == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
-              as String,
-      homePlanet: null == homePlanet
+              as String?,
+      homePlanet: freezed == homePlanet
           ? _value.homePlanet
           : homePlanet // ignore: cast_nullable_to_non_nullable
-              as String,
-      occupation: null == occupation
+              as String?,
+      occupation: freezed == occupation
           ? _value.occupation
           : occupation // ignore: cast_nullable_to_non_nullable
-              as String,
-      sayings: null == sayings
+              as String?,
+      sayings: freezed == sayings
           ? _value._sayings
           : sayings // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      name: null == name
+              as List<String>?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as Name,
-      images: null == images
+              as Name?,
+      images: freezed == images
           ? _value.images
           : images // ignore: cast_nullable_to_non_nullable
-              as Images,
+              as Images?,
     ));
   }
 }
@@ -227,43 +235,45 @@ class __$$_CharacterCopyWithImpl<$Res>
 class _$_Character implements _Character {
   const _$_Character(
       {required this.id,
-      required this.age,
-      required this.gender,
-      required this.species,
-      required this.homePlanet,
-      required this.occupation,
-      required final List<String> sayings,
-      required this.name,
-      required this.images})
+      this.age,
+      this.gender,
+      this.species,
+      this.homePlanet,
+      this.occupation,
+      final List<String>? sayings,
+      this.name,
+      this.images})
       : _sayings = sayings;
 
   factory _$_Character.fromJson(Map<String, dynamic> json) =>
       _$$_CharacterFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
-  final String age;
+  final String? age;
   @override
-  final String gender;
+  final String? gender;
   @override
-  final String species;
+  final String? species;
   @override
-  final String homePlanet;
+  final String? homePlanet;
   @override
-  final String occupation;
-  final List<String> _sayings;
+  final String? occupation;
+  final List<String>? _sayings;
   @override
-  List<String> get sayings {
+  List<String>? get sayings {
+    final value = _sayings;
+    if (value == null) return null;
     if (_sayings is EqualUnmodifiableListView) return _sayings;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_sayings);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final Name name;
+  final Name? name;
   @override
-  final Images images;
+  final Images? images;
 
   @override
   String toString() {
@@ -318,37 +328,37 @@ class _$_Character implements _Character {
 
 abstract class _Character implements Character {
   const factory _Character(
-      {required final String id,
-      required final String age,
-      required final String gender,
-      required final String species,
-      required final String homePlanet,
-      required final String occupation,
-      required final List<String> sayings,
-      required final Name name,
-      required final Images images}) = _$_Character;
+      {required final int id,
+      final String? age,
+      final String? gender,
+      final String? species,
+      final String? homePlanet,
+      final String? occupation,
+      final List<String>? sayings,
+      final Name? name,
+      final Images? images}) = _$_Character;
 
   factory _Character.fromJson(Map<String, dynamic> json) =
       _$_Character.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
-  String get age;
+  String? get age;
   @override
-  String get gender;
+  String? get gender;
   @override
-  String get species;
+  String? get species;
   @override
-  String get homePlanet;
+  String? get homePlanet;
   @override
-  String get occupation;
+  String? get occupation;
   @override
-  List<String> get sayings;
+  List<String>? get sayings;
   @override
-  Name get name;
+  Name? get name;
   @override
-  Images get images;
+  Images? get images;
   @override
   @JsonKey(ignore: true)
   _$$_CharacterCopyWith<_$_Character> get copyWith =>
@@ -361,8 +371,8 @@ Images _$ImagesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Images {
-  String get headShot => throw _privateConstructorUsedError;
-  String get main => throw _privateConstructorUsedError;
+  String? get headShot => throw _privateConstructorUsedError;
+  String? get main => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -374,7 +384,7 @@ abstract class $ImagesCopyWith<$Res> {
   factory $ImagesCopyWith(Images value, $Res Function(Images) then) =
       _$ImagesCopyWithImpl<$Res, Images>;
   @useResult
-  $Res call({String headShot, String main});
+  $Res call({String? headShot, String? main});
 }
 
 /// @nodoc
@@ -390,18 +400,18 @@ class _$ImagesCopyWithImpl<$Res, $Val extends Images>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? headShot = null,
-    Object? main = null,
+    Object? headShot = freezed,
+    Object? main = freezed,
   }) {
     return _then(_value.copyWith(
-      headShot: null == headShot
+      headShot: freezed == headShot
           ? _value.headShot
           : headShot // ignore: cast_nullable_to_non_nullable
-              as String,
-      main: null == main
+              as String?,
+      main: freezed == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -412,7 +422,7 @@ abstract class _$$_ImagesCopyWith<$Res> implements $ImagesCopyWith<$Res> {
       __$$_ImagesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String headShot, String main});
+  $Res call({String? headShot, String? main});
 }
 
 /// @nodoc
@@ -425,18 +435,18 @@ class __$$_ImagesCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? headShot = null,
-    Object? main = null,
+    Object? headShot = freezed,
+    Object? main = freezed,
   }) {
     return _then(_$_Images(
-      headShot: null == headShot
+      headShot: freezed == headShot
           ? _value.headShot
           : headShot // ignore: cast_nullable_to_non_nullable
-              as String,
-      main: null == main
+              as String?,
+      main: freezed == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -444,15 +454,15 @@ class __$$_ImagesCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Images implements _Images {
-  const _$_Images({required this.headShot, required this.main});
+  const _$_Images({this.headShot, this.main});
 
   factory _$_Images.fromJson(Map<String, dynamic> json) =>
       _$$_ImagesFromJson(json);
 
   @override
-  final String headShot;
+  final String? headShot;
   @override
-  final String main;
+  final String? main;
 
   @override
   String toString() {
@@ -488,15 +498,15 @@ class _$_Images implements _Images {
 }
 
 abstract class _Images implements Images {
-  const factory _Images(
-      {required final String headShot, required final String main}) = _$_Images;
+  const factory _Images({final String? headShot, final String? main}) =
+      _$_Images;
 
   factory _Images.fromJson(Map<String, dynamic> json) = _$_Images.fromJson;
 
   @override
-  String get headShot;
+  String? get headShot;
   @override
-  String get main;
+  String? get main;
   @override
   @JsonKey(ignore: true)
   _$$_ImagesCopyWith<_$_Images> get copyWith =>
@@ -509,9 +519,9 @@ Name _$NameFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Name {
-  String get first => throw _privateConstructorUsedError;
-  String get middle => throw _privateConstructorUsedError;
-  String get last => throw _privateConstructorUsedError;
+  String? get first => throw _privateConstructorUsedError;
+  String? get middle => throw _privateConstructorUsedError;
+  String? get last => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -523,7 +533,7 @@ abstract class $NameCopyWith<$Res> {
   factory $NameCopyWith(Name value, $Res Function(Name) then) =
       _$NameCopyWithImpl<$Res, Name>;
   @useResult
-  $Res call({String first, String middle, String last});
+  $Res call({String? first, String? middle, String? last});
 }
 
 /// @nodoc
@@ -539,23 +549,23 @@ class _$NameCopyWithImpl<$Res, $Val extends Name>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? first = null,
-    Object? middle = null,
-    Object? last = null,
+    Object? first = freezed,
+    Object? middle = freezed,
+    Object? last = freezed,
   }) {
     return _then(_value.copyWith(
-      first: null == first
+      first: freezed == first
           ? _value.first
           : first // ignore: cast_nullable_to_non_nullable
-              as String,
-      middle: null == middle
+              as String?,
+      middle: freezed == middle
           ? _value.middle
           : middle // ignore: cast_nullable_to_non_nullable
-              as String,
-      last: null == last
+              as String?,
+      last: freezed == last
           ? _value.last
           : last // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -566,7 +576,7 @@ abstract class _$$_NameCopyWith<$Res> implements $NameCopyWith<$Res> {
       __$$_NameCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String first, String middle, String last});
+  $Res call({String? first, String? middle, String? last});
 }
 
 /// @nodoc
@@ -578,23 +588,23 @@ class __$$_NameCopyWithImpl<$Res> extends _$NameCopyWithImpl<$Res, _$_Name>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? first = null,
-    Object? middle = null,
-    Object? last = null,
+    Object? first = freezed,
+    Object? middle = freezed,
+    Object? last = freezed,
   }) {
     return _then(_$_Name(
-      first: null == first
+      first: freezed == first
           ? _value.first
           : first // ignore: cast_nullable_to_non_nullable
-              as String,
-      middle: null == middle
+              as String?,
+      middle: freezed == middle
           ? _value.middle
           : middle // ignore: cast_nullable_to_non_nullable
-              as String,
-      last: null == last
+              as String?,
+      last: freezed == last
           ? _value.last
           : last // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -602,17 +612,16 @@ class __$$_NameCopyWithImpl<$Res> extends _$NameCopyWithImpl<$Res, _$_Name>
 /// @nodoc
 @JsonSerializable()
 class _$_Name implements _Name {
-  const _$_Name(
-      {required this.first, required this.middle, required this.last});
+  const _$_Name({this.first, this.middle, this.last});
 
   factory _$_Name.fromJson(Map<String, dynamic> json) => _$$_NameFromJson(json);
 
   @override
-  final String first;
+  final String? first;
   @override
-  final String middle;
+  final String? middle;
   @override
-  final String last;
+  final String? last;
 
   @override
   String toString() {
@@ -649,18 +658,18 @@ class _$_Name implements _Name {
 
 abstract class _Name implements Name {
   const factory _Name(
-      {required final String first,
-      required final String middle,
-      required final String last}) = _$_Name;
+      {final String? first,
+      final String? middle,
+      final String? last}) = _$_Name;
 
   factory _Name.fromJson(Map<String, dynamic> json) = _$_Name.fromJson;
 
   @override
-  String get first;
+  String? get first;
   @override
-  String get middle;
+  String? get middle;
   @override
-  String get last;
+  String? get last;
   @override
   @JsonKey(ignore: true)
   _$$_NameCopyWith<_$_Name> get copyWith => throw _privateConstructorUsedError;

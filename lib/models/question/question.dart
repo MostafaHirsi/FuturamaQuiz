@@ -9,9 +9,9 @@ part 'question.g.dart';
 class Question with _$Question {
   const factory Question(
       {required String id,
-      required String question,
-      required String possibleAnswers,
-      required String correctAnswer}) = _Question;
+      String? question,
+      String? possibleAnswers,
+      String? correctAnswer}) = _Question;
 
   factory Question.fromJson(Map<String, dynamic> json) =>
       _$QuestionFromJson(json);
