@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:futurama_quiz/models/character.dart';
-import 'package:futurama_quiz/models/info.dart';
-import 'package:futurama_quiz/models/question.dart';
+
+import '../models/character/character.dart';
+import '../models/info/info.dart';
+import '../models/question/question.dart';
 
 class FuturamaApiService {
   final Dio dio;
