@@ -4,11 +4,11 @@ import 'package:futurama_quiz/states/futurama_state.dart';
 
 import '../repository/futurama_repository.dart';
 
-class FuturamaDataNotifier extends ChangeNotifier {
+class FuturamaChangeNotifier extends ChangeNotifier {
   final FuturamaRepository futuramaRepository;
   FuturamaState futuramaState = FuturamaState();
 
-  FuturamaDataNotifier(this.futuramaRepository);
+  FuturamaChangeNotifier(this.futuramaRepository);
 
   Future<void> fetchCharacters() async {
     futuramaState = futuramaState.copyWith(
