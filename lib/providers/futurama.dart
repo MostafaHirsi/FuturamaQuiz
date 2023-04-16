@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:futurama_quiz/notifiers/futurama_data_notifier.dart';
+import 'package:futurama_quiz/notifiers/futurama_change_notifier.dart';
 
 import '../api/futurama_provider.dart';
 import '../repository/futurama_repository.dart';
@@ -13,7 +13,7 @@ final futuramaRepositoryProvider = Provider<FuturamaRepository>((ref) {
   return FuturamaRepository(ref.read(futuramaApiService));
 });
 
-final futuramaDataNotifierProvider =
-    ChangeNotifierProvider<FuturamaDataNotifier>((ref) {
-  return FuturamaDataNotifier(ref.read(futuramaRepositoryProvider));
+final futuramaChangeNotifierProvider =
+    ChangeNotifierProvider<FuturamaChangeNotifier>((ref) {
+  return FuturamaChangeNotifier(ref.read(futuramaRepositoryProvider));
 });
