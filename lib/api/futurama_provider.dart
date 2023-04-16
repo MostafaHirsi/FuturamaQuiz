@@ -25,17 +25,9 @@ class FuturamaApiService {
     return info;
   }
 
-  Future<List<Character>?> getCharacters() async {
+  Future<List<dynamic>> getCharacters() async {
     Response response = await dio.get('/characters');
-    if (response.statusCode == 404) {
-      return null;
-    }
-    List responseList = response.data;
-
-    List<Character> characters = responseList
-        .map((rawCharacter) => Character.fromJson(rawCharacter))
-        .toList();
-    return characters;
+    return response.data;
   }
 
   Future<List<Question>?> getQuestions() async {
