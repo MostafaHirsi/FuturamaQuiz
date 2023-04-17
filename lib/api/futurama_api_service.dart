@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 
 import '../models/character/character.dart';
@@ -16,30 +18,27 @@ class FuturamaApiService {
     );
   }
 
-  Future<Info?> getInfo() async {
+  Future<Map<String, dynamic>> getInfo() async {
     Response response = await dio.get('/info');
-    if (response.statusCode == 404) {
-      return null;
+    if (response.statusCode! < 200 || response.statusCode! > 299) {
+      throw HttpException(response.statusMessage!);
     }
-    Info info = Info.fromJson(response.data);
-    return info;
+    return response.data;
   }
 
   Future<List<dynamic>> getCharacters() async {
     Response response = await dio.get('/characters');
+    if (response.statusCode! < 200 || response.statusCode! > 299) {
+      throw HttpException(response.statusMessage!);
+    }
     return response.data;
   }
 
-  Future<List<Question>?> getQuestions() async {
+  Future<List<dynamic>> getQuestions() async {
     Response response = await dio.get('/questions');
-    if (response.statusCode == 404) {
-      return null;
+    if (response.statusCode! < 200 || response.statusCode! > 299) {
+      throw HttpException(response.statusMessage!);
     }
-    List responseList = response.data;
-
-    List<Question> questions = responseList
-        .map((rawQuestion) => Question.fromJson(rawQuestion))
-        .toList();
-    return questions;
+    return response.data;
   }
 }
