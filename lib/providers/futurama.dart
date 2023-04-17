@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:futurama_quiz/notifiers/futurama_data_notifier.dart';
 
-import '../api/futurama_provider.dart';
+import '../api/futurama_api_service.dart';
 import '../repository/futurama_repository.dart';
 import 'dio.dart';
 
