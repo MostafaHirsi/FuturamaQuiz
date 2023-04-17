@@ -18,20 +18,38 @@ class FuturamaState with _$FuturamaState {
 class CharactersState {
   final List<Character> characters;
   final bool isLoading;
+  final String error;
+  final bool hasError;
 
-  const CharactersState({this.characters = const [], this.isLoading = false});
+  const CharactersState(
+      {this.error = '',
+      this.hasError = false,
+      this.characters = const [],
+      this.isLoading = false});
 }
 
 class QuestionsState {
   final List<Question> questions;
   final bool isLoading;
+  final String error;
+  final bool hasError;
 
-  const QuestionsState({this.questions = const [], this.isLoading = false});
+  const QuestionsState(
+      {this.error = '',
+      this.hasError = false,
+      this.questions = const [],
+      this.isLoading = false});
 }
 
 class InfoState {
   final Info? info;
   final bool isLoading;
+  final String error;
+  final bool hasError;
 
-  const InfoState({this.info, this.isLoading = false});
+  const InfoState(
+      {this.error = '',
+      this.hasError = false,
+      this.info,
+      this.isLoading = false});
 }

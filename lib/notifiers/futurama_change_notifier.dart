@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:futurama_quiz/models/character/character.dart';
 import 'package:futurama_quiz/states/futurama_state.dart';
@@ -11,15 +13,24 @@ class FuturamaChangeNotifier extends ChangeNotifier {
   FuturamaChangeNotifier(this.futuramaRepository);
 
   Future<void> fetchCharacters() async {
-    futuramaState = futuramaState.copyWith(
-      charactersState: const CharactersState(isLoading: true),
-    );
-    notifyListeners();
-    List<Character> characters = await futuramaRepository.fetchCharacters();
-    futuramaState = futuramaState.copyWith(
-      charactersState:
-          CharactersState(isLoading: false, characters: characters),
-    );
-    notifyListeners();
+    try {
+      futuramaState = futuramaState.copyWith(
+        charactersState: const CharactersState(isLoading: true),
+      );
+      notifyListeners();
+      List<Character> characters = await futuramaRepository.fetchCharacters();
+      futuramaState = futuramaState.copyWith(
+        charactersState:
+            CharactersState(isLoading: false, characters: characters),
+      );
+      notifyListeners();
+    } catch (exception) {
+      futuramaState = futuramaState.copyWith(
+        charactersState: const CharactersState(
+            isLoading: false,
+            error: "Couldn't retrieve characters, please try again later",
+            hasError: true),
+      );
+    }
   }
 }
