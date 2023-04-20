@@ -20,9 +20,9 @@ Question _$QuestionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Question {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String? get question => throw _privateConstructorUsedError;
-  String? get possibleAnswers => throw _privateConstructorUsedError;
+  List<String>? get possibleAnswers => throw _privateConstructorUsedError;
   String? get correctAnswer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -37,9 +37,9 @@ abstract class $QuestionCopyWith<$Res> {
       _$QuestionCopyWithImpl<$Res, Question>;
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String? question,
-      String? possibleAnswers,
+      List<String>? possibleAnswers,
       String? correctAnswer});
 }
 
@@ -65,7 +65,7 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       question: freezed == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -73,7 +73,7 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
       possibleAnswers: freezed == possibleAnswers
           ? _value.possibleAnswers
           : possibleAnswers // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       correctAnswer: freezed == correctAnswer
           ? _value.correctAnswer
           : correctAnswer // ignore: cast_nullable_to_non_nullable
@@ -90,9 +90,9 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
+      {int id,
       String? question,
-      String? possibleAnswers,
+      List<String>? possibleAnswers,
       String? correctAnswer});
 }
 
@@ -116,15 +116,15 @@ class __$$_QuestionCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       question: freezed == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
               as String?,
       possibleAnswers: freezed == possibleAnswers
-          ? _value.possibleAnswers
+          ? _value._possibleAnswers
           : possibleAnswers // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       correctAnswer: freezed == correctAnswer
           ? _value.correctAnswer
           : correctAnswer // ignore: cast_nullable_to_non_nullable
@@ -139,18 +139,27 @@ class _$_Question implements _Question {
   const _$_Question(
       {required this.id,
       this.question,
-      this.possibleAnswers,
-      this.correctAnswer});
+      final List<String>? possibleAnswers,
+      this.correctAnswer})
+      : _possibleAnswers = possibleAnswers;
 
   factory _$_Question.fromJson(Map<String, dynamic> json) =>
       _$$_QuestionFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String? question;
+  final List<String>? _possibleAnswers;
   @override
-  final String? possibleAnswers;
+  List<String>? get possibleAnswers {
+    final value = _possibleAnswers;
+    if (value == null) return null;
+    if (_possibleAnswers is EqualUnmodifiableListView) return _possibleAnswers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final String? correctAnswer;
 
@@ -167,16 +176,16 @@ class _$_Question implements _Question {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.question, question) ||
                 other.question == question) &&
-            (identical(other.possibleAnswers, possibleAnswers) ||
-                other.possibleAnswers == possibleAnswers) &&
+            const DeepCollectionEquality()
+                .equals(other._possibleAnswers, _possibleAnswers) &&
             (identical(other.correctAnswer, correctAnswer) ||
                 other.correctAnswer == correctAnswer));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, question, possibleAnswers, correctAnswer);
+  int get hashCode => Object.hash(runtimeType, id, question,
+      const DeepCollectionEquality().hash(_possibleAnswers), correctAnswer);
 
   @JsonKey(ignore: true)
   @override
@@ -194,19 +203,19 @@ class _$_Question implements _Question {
 
 abstract class _Question implements Question {
   const factory _Question(
-      {required final String id,
+      {required final int id,
       final String? question,
-      final String? possibleAnswers,
+      final List<String>? possibleAnswers,
       final String? correctAnswer}) = _$_Question;
 
   factory _Question.fromJson(Map<String, dynamic> json) = _$_Question.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String? get question;
   @override
-  String? get possibleAnswers;
+  List<String>? get possibleAnswers;
   @override
   String? get correctAnswer;
   @override

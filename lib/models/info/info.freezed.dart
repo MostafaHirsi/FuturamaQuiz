@@ -20,7 +20,7 @@ Info _$InfoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Info {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String? get synopsis => throw _privateConstructorUsedError;
   String? get yearsAired => throw _privateConstructorUsedError;
   List<Creator>? get sayings => throw _privateConstructorUsedError;
@@ -36,10 +36,7 @@ abstract class $InfoCopyWith<$Res> {
       _$InfoCopyWithImpl<$Res, Info>;
   @useResult
   $Res call(
-      {String id,
-      String? synopsis,
-      String? yearsAired,
-      List<Creator>? sayings});
+      {int id, String? synopsis, String? yearsAired, List<Creator>? sayings});
 }
 
 /// @nodoc
@@ -64,7 +61,7 @@ class _$InfoCopyWithImpl<$Res, $Val extends Info>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       synopsis: freezed == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -88,10 +85,7 @@ abstract class _$$_InfoCopyWith<$Res> implements $InfoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String? synopsis,
-      String? yearsAired,
-      List<Creator>? sayings});
+      {int id, String? synopsis, String? yearsAired, List<Creator>? sayings});
 }
 
 /// @nodoc
@@ -112,7 +106,7 @@ class __$$_InfoCopyWithImpl<$Res> extends _$InfoCopyWithImpl<$Res, _$_Info>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       synopsis: freezed == synopsis
           ? _value.synopsis
           : synopsis // ignore: cast_nullable_to_non_nullable
@@ -142,7 +136,7 @@ class _$_Info implements _Info {
   factory _$_Info.fromJson(Map<String, dynamic> json) => _$$_InfoFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String? synopsis;
   @override
@@ -196,7 +190,7 @@ class _$_Info implements _Info {
 
 abstract class _Info implements Info {
   const factory _Info(
-      {required final String id,
+      {required final int id,
       final String? synopsis,
       final String? yearsAired,
       final List<Creator>? sayings}) = _$_Info;
@@ -204,7 +198,7 @@ abstract class _Info implements Info {
   factory _Info.fromJson(Map<String, dynamic> json) = _$_Info.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String? get synopsis;
   @override
